@@ -1,0 +1,6 @@
+.DS_Store
+tmp/
+
+# Private source material used to build the public site
+Profile.pdf
+Basic_LinkedInDataExport*.zip*

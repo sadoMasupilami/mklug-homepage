@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630" role="img" aria-labelledby="title desc">
+  <title id="title">Michael Klug — Platform Engineering</title>
+  <desc id="desc">Cloud-native platforms that make the secure path the easy path.</desc>
+  <rect width="1200" height="630" fill="#f3f0e7"/>
+  <defs>
+    <pattern id="grid" width="48" height="48" patternUnits="userSpaceOnUse">
+      <path d="M48 0H0V48" fill="none" stroke="#10231f" stroke-opacity=".07"/>
+    </pattern>
+  </defs>
+  <rect width="1200" height="630" fill="url(#grid)"/>
+  <circle cx="1015" cy="185" r="238" fill="#c8f169"/>
+  <circle cx="1015" cy="185" r="292" fill="none" stroke="#10231f" stroke-opacity=".18"/>
+  <rect x="790" y="105" width="330" height="410" rx="30" fill="#10231f"/>
+  <path d="M840 305h230" stroke="#c8f169" stroke-width="3"/>
+  <circle cx="845" cy="305" r="9" fill="#f56b40"/>
+  <circle cx="955" cy="305" r="9" fill="#c8f169"/>
+  <circle cx="1065" cy="305" r="9" fill="#c8f169"/>
+  <text x="845" y="260" fill="#fff" font-family="Arial, sans-serif" font-size="24" font-weight="700">CODE</text>
+  <text x="950" y="350" fill="#fff" font-family="Arial, sans-serif" font-size="24" font-weight="700">BUILD</text>
+  <text x="1055" y="260" fill="#fff" font-family="Arial, sans-serif" font-size="24" font-weight="700">SHIP</text>
+  <rect x="72" y="68" width="62" height="62" rx="31" fill="#10231f"/>
+  <text x="103" y="107" text-anchor="middle" fill="#c8f169" font-family="Arial, sans-serif" font-size="19" font-weight="800">MK</text>
+  <text x="72" y="226" fill="#1f7668" font-family="Arial, sans-serif" font-size="18" font-weight="800" letter-spacing="2">MICHAEL KLUG · PLATFORM ARCHITECT</text>
+  <text x="72" y="316" fill="#10231f" font-family="Arial, sans-serif" font-size="70" font-weight="750" letter-spacing="-4">Make the platform</text>
+  <text x="72" y="391" fill="#10231f" font-family="Georgia, serif" font-size="74" font-style="italic">disappear.</text>
+  <rect x="66" y="394" width="330" height="18" rx="4" fill="#c8f169"/>
+  <text x="72" y="486" fill="#40534e" font-family="Arial, sans-serif" font-size="25">Cloud-native platforms that make the</text>
+  <text x="72" y="522" fill="#40534e" font-family="Arial, sans-serif" font-size="25">secure path the easy path.</text>
+</svg>
