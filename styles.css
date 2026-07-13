@@ -764,8 +764,7 @@ svg {
   color: rgba(255, 255, 255, 0.58);
 }
 
-.portrait-badge,
-.portrait-focus {
+.portrait-badge {
   position: absolute;
   z-index: 4;
   border: 1px solid rgba(16, 35, 31, 0.12);
@@ -798,14 +797,11 @@ svg {
 }
 
 .portrait-badge small,
-.portrait-badge strong,
-.portrait-focus span,
-.portrait-focus strong {
+.portrait-badge strong {
   display: block;
 }
 
-.portrait-badge small,
-.portrait-focus span {
+.portrait-badge small {
   color: var(--teal);
   font-size: 8px;
   font-weight: 850;
@@ -818,25 +814,6 @@ svg {
   margin-top: 2px;
   font-size: 14px;
   letter-spacing: -0.02em;
-}
-
-.portrait-focus {
-  top: 54px;
-  right: -24px;
-  max-width: 176px;
-  padding: 13px 16px;
-  background: var(--mint);
-  color: var(--ink);
-}
-
-.portrait-focus span {
-  color: rgba(16, 35, 31, 0.65);
-}
-
-.portrait-focus strong {
-  margin-top: 3px;
-  font-size: 12px;
-  line-height: 1.35;
 }
 
 .capability-strip {
@@ -1707,10 +1684,6 @@ svg {
     left: -14px;
   }
 
-  .portrait-focus {
-    right: -10px;
-  }
-
   .section-heading,
   .proof-heading {
     gap: 55px;
@@ -1968,10 +1941,6 @@ svg {
     left: -2px;
     bottom: -12px;
     min-width: 198px;
-  }
-
-  .portrait-focus {
-    display: none;
   }
 
   .capability-strip {
