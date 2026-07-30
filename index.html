@@ -17,12 +17,23 @@
       property="og:description"
       content="Cloud-native platforms that make the secure path the easy path — by Michael Klug, Senior Platform Architect and Kubestronaut."
     />
-    <meta property="og:image" content="assets/social-card.png" />
+    <meta
+      property="og:image"
+      content="https://sadomasupilami.github.io/mklug-homepage/assets/social-card.png"
+    />
     <meta property="og:image:type" content="image/png" />
     <meta property="og:image:width" content="1200" />
     <meta property="og:image:height" content="630" />
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:image" content="assets/social-card.png" />
+    <meta
+      name="twitter:image"
+      content="https://sadomasupilami.github.io/mklug-homepage/assets/social-card.png"
+    />
+    <meta
+      property="og:url"
+      content="https://sadomasupilami.github.io/mklug-homepage/"
+    />
+    <link rel="canonical" href="https://sadomasupilami.github.io/mklug-homepage/" />
 
     <link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
     <link rel="stylesheet" href="styles.css" />
@@ -33,9 +44,18 @@
         "@type": "Person",
         "name": "Michael Klug",
         "jobTitle": "Senior Platform Architect",
-        "image": "assets/michael-klug-profile.jpg",
-        "url": "https://www.linkedin.com/in/michi-klug/",
-        "sameAs": ["https://www.linkedin.com/in/michi-klug/"],
+        "image": "https://sadomasupilami.github.io/mklug-homepage/assets/michael-klug-profile.jpg",
+        "url": "https://sadomasupilami.github.io/mklug-homepage/",
+        "sameAs": [
+          "https://www.linkedin.com/in/michi-klug/",
+          "https://github.com/sadoMasupilami",
+          "https://community.cncf.io/cloud-native-carinthia/"
+        ],
+        "worksFor": {
+          "@type": "Organization",
+          "name": "FullStackS",
+          "url": "https://fullstacks.io/"
+        },
         "homeLocation": {
           "@type": "Place",
           "name": "Villach, Carinthia, Austria"
@@ -109,6 +129,7 @@
           <a href="#expertise">Expertise</a>
           <a href="#approach">Approach</a>
           <a href="#experience">Experience</a>
+          <a href="#speaking">Speaking</a>
           <a href="#credentials">Credentials</a>
           <a class="nav-cta" href="#contact">Let’s talk</a>
         </nav>
@@ -138,8 +159,8 @@
               <a class="text-link" href="#expertise">Explore the work</a>
             </div>
             <div class="hero-meta reveal reveal-delay-3">
-              <span>Based in Villach, Austria</span>
-              <span>Certified across Kubernetes, GitOps &amp; security</span>
+              <span>Villach, Austria · Vienna &amp; remote</span>
+              <span>Rancher · OpenShift · OpenTelemetry</span>
             </div>
           </div>
 
@@ -174,11 +195,11 @@
           </div>
         </div>
 
-        <div class="shell capability-strip reveal">
-          <span>Rancher &amp; OpenShift platforms</span>
-          <span>Kubernetes security</span>
-          <span>GitOps &amp; IaC</span>
-          <span>OpenTelemetry &amp; service mesh</span>
+        <div class="shell capability-strip reveal" aria-label="Professional highlights">
+          <span><strong>11+</strong> years in infrastructure &amp; cloud</span>
+          <span><strong>Since 2018</strong> hands-on Kubernetes</span>
+          <span><strong>Since 2021</strong> annual Kubernetes lecturer</span>
+          <span><strong>CNCF</strong> community organizer</span>
         </div>
       </section>
 
@@ -325,11 +346,11 @@
             <p class="eyebrow">Experience</p>
             <h2>Built in the real world.</h2>
             <p>
-              More than a decade across infrastructure, cloud engineering, and platform
-              architecture — from operating systems and monitoring to modern developer platforms.
+              Building infrastructure and cloud-native systems since 2014 — from operating systems
+              and monitoring to secure developer platforms.
             </p>
             <div class="experience-stat">
-              <strong>10+</strong>
+              <strong>11+</strong>
               <span>years across infrastructure &amp; cloud-native systems</span>
             </div>
             <div class="education-note">
@@ -337,8 +358,8 @@
               <div>
                 <strong>BASc · Software Engineering</strong>
                 <p>
-                  FH Joanneum, 2020 · Thesis work on managed CI/CD platforms and Kubernetes
-                  operators for complex microservices.
+                  FH Joanneum, 2020 · Graduated with distinction (grade 1.32). Thesis work on
+                  managed CI/CD platforms and Kubernetes operators for complex microservices.
                 </p>
               </div>
             </div>
@@ -403,36 +424,36 @@
         </div>
       </section>
 
-      <section class="section proof" id="credentials" aria-labelledby="proof-title">
+      <section class="section proof" id="speaking" aria-labelledby="proof-title">
         <div class="shell">
           <div class="proof-heading reveal">
             <div>
-              <p class="eyebrow">Credentials &amp; community</p>
-              <h2 id="proof-title">Practice, certify, teach, repeat.</h2>
+              <p class="eyebrow">Speaking, teaching &amp; community</p>
+              <h2 id="proof-title">Share the work, not just the outcome.</h2>
             </div>
             <p>
-              Technical depth matters most when it becomes useful to others — in project teams,
-              classrooms, and the cloud-native community.
+              I turn hands-on platform work into courses, talks, and community conversations that
+              help other engineers move faster with fewer hidden assumptions.
             </p>
           </div>
 
           <div class="proof-grid">
             <article class="proof-feature reveal">
-              <span class="proof-label">Teaching</span>
+              <span class="proof-label">Teaching · since 2021</span>
               <h3>Guest Speaker at FH Joanneum</h3>
               <p>
-                Co-planning and teaching the annual “Containerization and Kubernetes” course since
-                2021.
+                Co-planning and teaching the annual “Containerization and Kubernetes” course for
+                the next generation of software engineers.
               </p>
-              <span class="proof-foot">12.5 hours · hands-on course</span>
+              <span class="proof-foot">12.5 hours · annual hands-on course</span>
             </article>
 
             <article class="proof-feature proof-feature-dark reveal reveal-delay-1">
               <span class="proof-label">Community</span>
-              <h3>Cloud Native Carinthia</h3>
+              <h3>Organizer, Cloud Native Carinthia</h3>
               <p>
-                Organizer in the CNCF community, connecting practitioners around Kubernetes,
-                platform engineering, security, and open source.
+                Building a regional CNCF community for practitioners, students, maintainers, and
+                companies across southern Austria.
               </p>
               <a href="https://community.cncf.io/cloud-native-carinthia/" target="_blank" rel="noreferrer">
                 Visit the community
@@ -443,14 +464,14 @@
             </article>
 
             <article class="proof-feature proof-talk reveal reveal-delay-2">
-              <span class="proof-label">Speaking</span>
-              <h3>Developer loops, without the friction</h3>
+              <span class="proof-label">Speaking · 2026</span>
+              <h3>Developer experience, live and practical</h3>
               <p>
-                Recent platform engineering talks explored faster Kubernetes inner loops and
-                no-setup developer experiences.
+                Two talks at the Austrian Platform Engineering Community Day, followed by a
+                hands-on inner-loop session at Lakeside Talks.
               </p>
               <a href="https://www.linkedin.com/in/michi-klug/recent-activity/all/" target="_blank" rel="noreferrer">
-                See recent activity
+                See speaking activity
                 <svg viewBox="0 0 20 20" aria-hidden="true">
                   <path d="M5 15L15 5M7 5h8v8" />
                 </svg>
@@ -458,7 +479,56 @@
             </article>
           </div>
 
-          <div class="certifications reveal" aria-label="Current selected certifications">
+          <div class="talks-block reveal" aria-labelledby="talks-title">
+            <div class="talks-intro">
+              <p class="eyebrow">Selected talks</p>
+              <h3 id="talks-title">Ideas tested in front of a room.</h3>
+              <p>
+                From workflow engines to developer inner loops: practical patterns, trade-offs,
+                and live demos rather than architecture by slide deck alone.
+              </p>
+            </div>
+
+            <div class="talk-list">
+              <a
+                class="talk-item"
+                href="https://www.meetup.com/de-de/lakeside-talks/"
+                target="_blank"
+                rel="noreferrer"
+              >
+                <span class="talk-year">2026 · Lakeside Talks</span>
+                <strong>Rebuilding sucks: Kubernetes inner loops for winners</strong>
+                <small>Fast feedback, debugging, live updates, and local-versus-remote development.</small>
+                <span class="talk-arrow" aria-hidden="true">↗</span>
+              </a>
+
+              <a
+                class="talk-item"
+                href="https://www.linkedin.com/in/michi-klug/recent-activity/all/"
+                target="_blank"
+                rel="noreferrer"
+              >
+                <span class="talk-year">2026 · APEC Vienna</span>
+                <strong>No Setup. No Friction. Just Code.</strong>
+                <small>Developer environments designed to remove setup and infrastructure friction.</small>
+                <span class="talk-arrow" aria-hidden="true">↗</span>
+              </a>
+
+              <a
+                class="talk-item"
+                href="https://community.cncf.io/events/details/cncf-graz-austria-presents-3-cncf-meetup-graz-august-29-2022/"
+                target="_blank"
+                rel="noreferrer"
+              >
+                <span class="talk-year">2022 · CNCF Graz</span>
+                <strong>Kubernetes-native workflow engines</strong>
+                <small>Tekton, Argo Workflows, Argo Events, and an end-to-end live demonstration.</small>
+                <span class="talk-arrow" aria-hidden="true">↗</span>
+              </a>
+            </div>
+          </div>
+
+          <div class="certifications reveal" id="credentials" aria-label="Selected certifications">
             <div class="certification-intro">
               <span>Selected credentials</span>
               <strong>Kubestronaut</strong>
@@ -534,6 +604,7 @@
         <div class="footer-links">
           <a href="mailto:michiklug85@gmail.com">Email</a>
           <a href="https://www.linkedin.com/in/michi-klug/" target="_blank" rel="noreferrer">LinkedIn</a>
+          <a href="https://github.com/sadoMasupilami" target="_blank" rel="noreferrer">GitHub</a>
           <a href="impressum.html">Impressum</a>
           <a href="#top">Back to top ↑</a>
         </div>
