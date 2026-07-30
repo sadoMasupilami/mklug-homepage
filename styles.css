@@ -820,26 +820,39 @@ svg {
   position: relative;
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  min-height: 74px;
+  min-height: 92px;
   border-top: 1px solid var(--line);
 }
 
 .capability-strip span {
   display: flex;
   align-items: center;
-  gap: 11px;
+  gap: 10px;
+  padding: 18px 22px;
   color: var(--ink-soft);
-  font-size: 11px;
-  font-weight: 800;
-  letter-spacing: 0.045em;
+  font-size: 10px;
+  font-weight: 760;
+  letter-spacing: 0.035em;
+  line-height: 1.4;
   text-transform: uppercase;
 }
 
-.capability-strip span::before {
-  content: "+";
-  color: var(--orange);
-  font-size: 18px;
-  font-weight: 400;
+.capability-strip span:first-child {
+  padding-left: 0;
+}
+
+.capability-strip span + span {
+  border-left: 1px solid var(--line);
+}
+
+.capability-strip strong {
+  flex: 0 0 auto;
+  color: var(--teal);
+  font-size: 22px;
+  font-weight: 820;
+  letter-spacing: -0.045em;
+  line-height: 1;
+  text-transform: none;
 }
 
 .section {
@@ -1300,6 +1313,110 @@ svg {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   gap: 18px;
+}
+
+.talks-block {
+  display: grid;
+  grid-template-columns: minmax(260px, 0.55fr) minmax(0, 1fr);
+  gap: 18px;
+  padding: 18px;
+  margin-top: 30px;
+  border-radius: var(--radius-md);
+  background: var(--ink);
+  color: var(--white);
+}
+
+.talks-intro {
+  padding: 30px;
+}
+
+.talks-intro .eyebrow {
+  margin-bottom: 42px;
+  color: var(--mint);
+}
+
+.talks-intro h3 {
+  max-width: 360px;
+  margin: 0;
+  font-size: 34px;
+  letter-spacing: -0.05em;
+  line-height: 1.08;
+}
+
+.talks-intro > p:last-child {
+  max-width: 410px;
+  margin: 18px 0 0;
+  color: rgba(255, 255, 255, 0.57);
+  font-size: 14px;
+  line-height: 1.7;
+}
+
+.talk-list {
+  display: grid;
+  gap: 8px;
+}
+
+.talk-item {
+  position: relative;
+  display: grid;
+  align-content: center;
+  min-height: 144px;
+  padding: 24px 58px 24px 24px;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 13px;
+  background: rgba(255, 255, 255, 0.045);
+  color: var(--white);
+  text-decoration: none;
+  transition: background-color 180ms ease, color 180ms ease, transform 180ms ease;
+}
+
+.talk-item:hover {
+  background: var(--white);
+  color: var(--ink);
+  transform: translateX(-3px);
+}
+
+.talk-year {
+  color: var(--mint);
+  font-family: "SFMono-Regular", Consolas, monospace;
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+}
+
+.talk-item:hover .talk-year {
+  color: var(--teal);
+}
+
+.talk-item strong {
+  margin-top: 8px;
+  font-size: 18px;
+  letter-spacing: -0.025em;
+  line-height: 1.25;
+}
+
+.talk-item small {
+  margin-top: 7px;
+  color: rgba(255, 255, 255, 0.52);
+  font-size: 11px;
+  line-height: 1.55;
+}
+
+.talk-item:hover small {
+  color: #60706b;
+}
+
+.talk-arrow {
+  position: absolute;
+  top: 24px;
+  right: 24px;
+  color: var(--mint);
+  font-size: 20px;
+}
+
+.talk-item:hover .talk-arrow {
+  color: var(--teal);
 }
 
 .proof-feature {
@@ -1879,8 +1996,14 @@ svg {
 
   .capability-strip {
     grid-template-columns: 1fr 1fr;
-    padding: 20px 0;
-    row-gap: 12px;
+  }
+
+  .capability-strip span:nth-child(3) {
+    border-left: 0;
+  }
+
+  .capability-strip span:nth-child(n + 3) {
+    border-top: 1px solid var(--line);
   }
 
   .section {
@@ -1924,6 +2047,14 @@ svg {
 
   .proof-feature {
     min-height: 320px;
+  }
+
+  .talks-block {
+    grid-template-columns: 1fr;
+  }
+
+  .talks-intro .eyebrow {
+    margin-bottom: 28px;
   }
 
   .contact-layout {
@@ -2034,6 +2165,17 @@ svg {
     grid-template-columns: 1fr;
   }
 
+  .capability-strip span,
+  .capability-strip span:first-child {
+    padding: 17px 0;
+  }
+
+  .capability-strip span + span,
+  .capability-strip span:nth-child(3) {
+    border-top: 1px solid var(--line);
+    border-left: 0;
+  }
+
   .section {
     padding: 82px 0;
   }
@@ -2109,6 +2251,23 @@ svg {
 
   .proof-feature h3 {
     margin-top: 62px;
+  }
+
+  .talks-block {
+    padding: 10px;
+  }
+
+  .talks-intro {
+    padding: 22px 16px 28px;
+  }
+
+  .talks-intro h3 {
+    font-size: 30px;
+  }
+
+  .talk-item {
+    min-height: 158px;
+    padding: 22px 48px 22px 20px;
   }
 
   .contact {
