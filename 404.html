@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Page not found — Michael Klug</title>
+    <meta name="robots" content="noindex" />
+    <meta name="color-scheme" content="dark light" />
+    <meta name="theme-color" content="#0b0d12" media="(prefers-color-scheme: dark)" />
+    <meta name="theme-color" content="#f5f3ee" media="(prefers-color-scheme: light)" />
+
+    <!-- GitHub Pages serves this file for any missing path, so asset URLs are absolute. -->
+    <link rel="icon" href="/mklug-homepage/assets/favicon.svg" type="image/svg+xml" />
+    <link rel="stylesheet" href="/mklug-homepage/styles.css" />
+
+    <script>
+      (function () {
+        try {
+          var theme = localStorage.getItem("theme");
+          if (theme === "light" || theme === "dark") {
+            document.documentElement.dataset.theme = theme;
+          }
+        } catch (error) {}
+      })();
+    </script>
+  </head>
+
+  <body class="page-simple">
+    <svg class="sprite" aria-hidden="true" focusable="false">
+      <symbol id="i-arrow" viewBox="0 0 20 20"><path d="M4 10h12M11 5l5 5-5 5" /></symbol>
+    </svg>
+
+    <header class="site-header is-scrolled">
+      <div class="container header-inner">
+        <a class="brand" href="/mklug-homepage/" aria-label="Michael Klug, home">
+          <span class="brand-mark" aria-hidden="true">mk<i></i></span>
+          <span class="brand-text">
+            <strong>Michael Klug</strong>
+            <small>Platform Architect</small>
+          </span>
+        </a>
+      </div>
+    </header>
+
+    <main id="main" class="container not-found">
+      <h1>4<span>0</span>4</h1>
+
+      <div class="terminal" role="img" aria-label="Terminal output: the requested page was not found">
+        <div class="terminal-bar">
+          <span class="terminal-dots" aria-hidden="true"><i></i><i></i><i></i></span>
+          <span class="terminal-title">michael@platform: ~</span>
+        </div>
+        <div class="terminal-body">
+          <p class="t-cmd"><span class="t-prompt">~ $</span> kubectl get page <span data-path>this-one</span></p>
+          <p class="t-out t-err">Error from server (NotFound): pages "<span data-path>this-one</span>" not found</p>
+          <p class="t-out t-dim"># It may have moved during the redesign. The homepage is still Running.</p>
+        </div>
+      </div>
+
+      <a class="button button-primary" href="/mklug-homepage/">
+        Back to the homepage
+        <svg class="icon" aria-hidden="true"><use href="#i-arrow" /></svg>
+      </a>
+    </main>
+
+    <script>
+      (function () {
+        var path = window.location.pathname.replace(/^\/mklug-homepage\/?/, "") || "this-one";
+        document.querySelectorAll("[data-path]").forEach(function (node) {
+          node.textContent = path.length > 48 ? path.slice(0, 45) + "..." : path;
+        });
+      })();
+    </script>
+  </body>
+</html>
