@@ -1985,18 +1985,35 @@ body.menu-open .site-header {
   transform: translate(2px, -2px);
 }
 
+@media (min-width: 768px) and (max-width: 1023px) {
+  .talk {
+    grid-template-columns: 190px minmax(0, 1fr);
+  }
+
+  .talk-go {
+    grid-column: 2;
+    justify-content: flex-start;
+  }
+}
+
 @media (max-width: 767px) {
   .highlights {
     grid-template-columns: minmax(0, 1fr);
   }
 
   .talk {
-    grid-template-columns: minmax(0, 1fr) auto;
+    grid-template-columns: minmax(0, 1fr);
+    gap: 10px;
   }
 
-  .talk-what {
-    grid-column: 1 / -1;
-    grid-row: 2;
+  .talk-when {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0 10px;
+  }
+
+  .talk-go {
+    justify-content: flex-start;
   }
 
   .talk:hover {
