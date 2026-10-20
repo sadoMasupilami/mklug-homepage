@@ -1,7 +1,7 @@
 # Michael Klug — Homepage
 
 A hand-built, dependency-free static homepage for Michael Klug: Senior Platform Architect at
-FullStackS, Kubestronaut, guest lecturer at FH Joanneum and organizer of Cloud Native Carinthia.
+FULLSTACKS, Kubestronaut, guest lecturer at FH Joanneum and organizer of Cloud Native Carinthia.
 
 The design is a "control plane" theme: dark by default with a light theme toggle, a git-log
 career timeline, a CI-pipeline approach section and an interactive terminal (type `help`).

@@ -291,15 +291,27 @@ if (terminal) {
     ],
     [
       "2026-05",
-      "https://austrian-plattform-engineering-community.sessionize.com/schedule/day/20260507",
+      "https://austrian-plattform-engineering-community.sessionize.com/session/1131330",
       "No Setup. No Friction. Just Code.",
       t("APEC 2026, Vienna", "APEC 2026, Wien"),
     ],
     [
       "2026-05",
-      "https://austrian-plattform-engineering-community.sessionize.com/schedule/day/20260507",
+      "https://austrian-plattform-engineering-community.sessionize.com/session/1131407",
       "DevX as Code",
       t("APEC 2026, Vienna", "APEC 2026, Wien"),
+    ],
+    [
+      "2024-09",
+      "https://www.linkedin.com/posts/fullstacks-gmbh_viennadevopsroundtable-staycool-devops-activity-7237053583802695680-0Mi7",
+      "DevOps done right",
+      t("Vienna DevOps Roundtable, Vienna", "Vienna DevOps Roundtable, Wien"),
+    ],
+    [
+      "2023-10",
+      "https://ocgroups.dev/cncf/group/cloud-native-graz/event/ap3df2r",
+      "Don’t get Tilted (or do)",
+      "CNCF Meetup Graz",
     ],
     [
       "2022-08",
@@ -337,10 +349,10 @@ if (terminal) {
     whoami() {
       line(
         t(
-          "<b>Michael Klug</b> — Senior Platform Architect at FullStackS, Kubestronaut,\n" +
+          "<b>Michael Klug</b> — Senior Platform Architect at FULLSTACKS, Kubestronaut,\n" +
             "guest lecturer at FH Joanneum and organizer of Cloud Native Carinthia.\n" +
             `Based in Villach, Austria. ${yearsSince(2014)} years in infrastructure, Kubernetes since 2018.`,
-          "<b>Michael Klug</b> — Senior Platform Architect bei FullStackS, Kubestronaut,\n" +
+          "<b>Michael Klug</b> — Senior Platform Architect bei FULLSTACKS, Kubestronaut,\n" +
             "Gastlektor an der FH Joanneum und Organisator von Cloud Native Carinthia.\n" +
             `Aus Villach, Österreich. ${yearsSince(2014)} Jahre Infrastruktur, Kubernetes seit 2018.`,
         ),
@@ -360,11 +372,11 @@ if (terminal) {
     career() {
       line(
         [
-          '<span class="y-s">c0ffee1</span> <span class="t-ok">(HEAD → main)</span> 2025  Senior Platform Architect @ FullStackS',
-          '<span class="y-s">fa57e2a</span> 2023  Senior DevOps Engineer @ FullStackS',
+          '<span class="y-s">c0ffee1</span> <span class="t-ok">(HEAD → main)</span> 2025  Senior Platform Architect @ FULLSTACKS',
+          '<span class="y-s">fa57e2a</span> 2023  Senior DevOps Engineer @ FULLSTACKS',
           '<span class="y-s">e1b6c03</span> 2022  CSM &amp; Technical Lead @ IBM',
           '<span class="y-s">5ca1ab1</span> 2020  Cloud Engineer → Senior Cloud Engineer @ Beyond by BearingPoint',
-          '<span class="y-s">b45c132</span> <span class="t-ok">(tag: education)</span> 2020  BSc Software Engineering @ FH Joanneum',
+          '<span class="y-s">b45c132</span> <span class="t-ok">(tag: education)</span> 2020  BSc Software Design @ FH Joanneum',
           '<span class="y-s">ba52014</span> 2014  IT Professional → Development IT-Services @ KNAPP AG',
         ].join("\n"),
       );
@@ -429,12 +441,15 @@ if (terminal) {
           "Kind:         PlatformArchitect",
           "Labels:       kubestronaut=true",
           "              community=cloud-native-carinthia",
-          "Role:         Senior Platform Architect @ FullStackS",
+          "Role:         Senior Platform Architect @ FULLSTACKS",
           "Focus:        developer-experience, platform-security, gitops, observability",
           'Status:       <span class="t-ok">Shipping</span>',
           "Events:",
           `  Normal  Teaching   ${t("FH Joanneum, every year since 2021", "FH Joanneum, jedes Jahr seit 2021")}`,
-          `  Normal  Speaking   ${t("APEC Vienna, Lakeside Talks Klagenfurt, CNCF Graz", "APEC Wien, Lakeside Talks Klagenfurt, CNCF Graz")}`,
+          `  Normal  Speaking   ${t(
+            "APEC Vienna, Lakeside Talks Klagenfurt, Vienna DevOps Roundtable, CNCF Graz",
+            "APEC Wien, Lakeside Talks Klagenfurt, Vienna DevOps Roundtable, CNCF Graz",
+          )}`,
           `  Normal  Hosting    ${t("Cloud Native Carinthia meetups", "Cloud Native Carinthia Meetups")}`,
         ].join("\n"),
       );
