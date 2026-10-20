@@ -14,9 +14,14 @@
     <meta name="theme-color" content="#0b0d12" media="(prefers-color-scheme: dark)" />
     <meta name="theme-color" content="#f5f3ee" media="(prefers-color-scheme: light)" />
     <link rel="canonical" href="https://sadomasupilami.github.io/mklug-homepage/" />
+    <link rel="alternate" hreflang="en" href="https://sadomasupilami.github.io/mklug-homepage/" />
+    <link rel="alternate" hreflang="de" href="https://sadomasupilami.github.io/mklug-homepage/de/" />
+    <link rel="alternate" hreflang="x-default" href="https://sadomasupilami.github.io/mklug-homepage/" />
 
     <meta property="og:type" content="profile" />
     <meta property="og:site_name" content="Michael Klug" />
+    <meta property="og:locale" content="en_US" />
+    <meta property="og:locale:alternate" content="de_AT" />
     <meta property="og:title" content="Michael Klug — Senior Platform Architect &amp; Kubestronaut" />
     <meta
       property="og:description"
@@ -65,55 +70,74 @@
     <script type="application/ld+json">
       {
         "@context": "https://schema.org",
-        "@type": "Person",
-        "name": "Michael Klug",
-        "jobTitle": "Senior Platform Architect",
-        "image": "https://sadomasupilami.github.io/mklug-homepage/assets/michael-klug-profile.jpg",
+        "@type": "ProfilePage",
+        "@id": "https://sadomasupilami.github.io/mklug-homepage/#profile",
         "url": "https://sadomasupilami.github.io/mklug-homepage/",
-        "email": "mailto:michiklug85@gmail.com",
-        "sameAs": [
-          "https://www.linkedin.com/in/michi-klug/",
-          "https://github.com/sadoMasupilami",
-          "https://community.cncf.io/cloud-native-carinthia/"
-        ],
-        "worksFor": {
-          "@type": "Organization",
-          "name": "FullStackS",
-          "url": "https://fullstacks.io/"
-        },
-        "homeLocation": {
-          "@type": "Place",
-          "name": "Villach, Carinthia, Austria"
-        },
-        "alumniOf": {
-          "@type": "CollegeOrUniversity",
-          "name": "FH Joanneum"
-        },
-        "knowsLanguage": ["de", "en"],
-        "knowsAbout": [
-          "Platform Engineering",
-          "Developer Experience",
-          "Kubernetes",
-          "Rancher",
-          "OpenShift",
-          "GitOps",
-          "Argo CD",
-          "Infrastructure as Code",
-          "Platform Security",
-          "OpenTelemetry",
-          "Istio",
-          "Prometheus"
-        ],
-        "hasCredential": [
-          { "@type": "EducationalOccupationalCredential", "name": "Kubestronaut", "credentialCategory": "Certification" },
-          { "@type": "EducationalOccupationalCredential", "name": "Certified Kubernetes Administrator", "credentialCategory": "Certification" },
-          { "@type": "EducationalOccupationalCredential", "name": "Certified Kubernetes Application Developer", "credentialCategory": "Certification" },
-          { "@type": "EducationalOccupationalCredential", "name": "Certified Kubernetes Security Specialist", "credentialCategory": "Certification" },
-          { "@type": "EducationalOccupationalCredential", "name": "Certified GitOps Associate", "credentialCategory": "Certification" },
-          { "@type": "EducationalOccupationalCredential", "name": "Certified Argo Project Associate", "credentialCategory": "Certification" },
-          { "@type": "EducationalOccupationalCredential", "name": "Istio Certified Associate", "credentialCategory": "Certification" },
-          { "@type": "EducationalOccupationalCredential", "name": "Prometheus Certified Associate", "credentialCategory": "Certification" }
-        ]
+        "name": "Michael Klug — Senior Platform Architect & Kubestronaut",
+        "inLanguage": "en",
+        "dateModified": "2026-10-20",
+        "mainEntity": {
+          "@type": "Person",
+          "@id": "https://sadomasupilami.github.io/mklug-homepage/#person",
+          "name": "Michael Klug",
+          "givenName": "Michael",
+          "familyName": "Klug",
+          "jobTitle": "Senior Platform Architect",
+          "image": "https://sadomasupilami.github.io/mklug-homepage/assets/michael-klug-profile.jpg",
+          "url": "https://sadomasupilami.github.io/mklug-homepage/",
+          "email": "mailto:michiklug85@gmail.com",
+          "sameAs": [
+            "https://www.linkedin.com/in/michi-klug/",
+            "https://github.com/sadoMasupilami",
+            "https://sessionize.com/michael-klug"
+          ],
+          "worksFor": {"@type": "Organization", "name": "FullStackS GmbH", "url": "https://fullstacks.io/"},
+          "homeLocation": {
+            "@type": "Place",
+            "address": {
+              "@type": "PostalAddress",
+              "addressLocality": "Villach",
+              "addressRegion": "Carinthia",
+              "addressCountry": "AT"
+            }
+          },
+          "alumniOf": {"@type": "CollegeOrUniversity", "name": "FH Joanneum", "url": "https://www.fh-joanneum.at/"},
+          "memberOf": {"@type": "Organization", "name": "Cloud Native Carinthia", "url": "https://community.cncf.io/cloud-native-carinthia/"},
+          "knowsLanguage": [
+            "de",
+            "en"
+          ],
+          "knowsAbout": [
+            "Platform Engineering",
+            "Developer Experience",
+            "Kubernetes",
+            "Rancher",
+            "OpenShift",
+            "GitOps",
+            "Argo CD",
+            "Infrastructure as Code",
+            "Platform Security",
+            "OpenTelemetry",
+            "Istio",
+            "Prometheus",
+            "Backstage"
+          ],
+          "hasCredential": [
+            {"@type": "EducationalOccupationalCredential", "name": "Kubestronaut", "credentialCategory": "Certification", "recognizedBy": {"@type": "Organization", "name": "The Linux Foundation"}, "url": "https://www.credly.com/badges/746972d2-5711-49da-adb9-190c93b9d49b"},
+            {"@type": "EducationalOccupationalCredential", "name": "Kubernetes and Cloud Native Associate (KCNA)", "credentialCategory": "Certification", "recognizedBy": {"@type": "Organization", "name": "The Linux Foundation"}},
+            {"@type": "EducationalOccupationalCredential", "name": "Kubernetes and Cloud Native Security Associate (KCSA)", "credentialCategory": "Certification", "recognizedBy": {"@type": "Organization", "name": "The Linux Foundation"}},
+            {"@type": "EducationalOccupationalCredential", "name": "Certified Kubernetes Administrator (CKA)", "credentialCategory": "Certification", "recognizedBy": {"@type": "Organization", "name": "The Linux Foundation"}, "url": "https://www.credly.com/badges/2878c2cc-ad54-4fa1-bb05-195f686e6bb5"},
+            {"@type": "EducationalOccupationalCredential", "name": "Certified Kubernetes Application Developer (CKAD)", "credentialCategory": "Certification", "recognizedBy": {"@type": "Organization", "name": "The Linux Foundation"}, "url": "https://www.credly.com/badges/9b6966a0-2987-46ea-bf01-4bb881c66b4e"},
+            {"@type": "EducationalOccupationalCredential", "name": "Certified Kubernetes Security Specialist (CKS)", "credentialCategory": "Certification", "recognizedBy": {"@type": "Organization", "name": "The Linux Foundation"}, "url": "https://www.credly.com/badges/590890c8-0853-4305-8e59-6575182fbf09"},
+            {"@type": "EducationalOccupationalCredential", "name": "Certified GitOps Associate (CGOA)", "credentialCategory": "Certification", "recognizedBy": {"@type": "Organization", "name": "The Linux Foundation"}, "url": "https://www.credly.com/badges/17396214-56f9-4669-8831-accf2b2cf406"},
+            {"@type": "EducationalOccupationalCredential", "name": "Certified Argo Project Associate (CAPA)", "credentialCategory": "Certification", "recognizedBy": {"@type": "Organization", "name": "The Linux Foundation"}, "url": "https://www.credly.com/badges/366ce829-1753-4521-adf3-b970d9c75f63"},
+            {"@type": "EducationalOccupationalCredential", "name": "Istio Certified Associate (ICA)", "credentialCategory": "Certification", "recognizedBy": {"@type": "Organization", "name": "The Linux Foundation"}, "url": "https://www.credly.com/badges/f935d9ec-7c9a-43e9-a65f-394552f7f266"},
+            {"@type": "EducationalOccupationalCredential", "name": "Prometheus Certified Associate (PCA)", "credentialCategory": "Certification", "recognizedBy": {"@type": "Organization", "name": "The Linux Foundation"}, "url": "https://www.credly.com/badges/18e3b3e3-436d-419a-ad2a-cdc4ad603782"},
+            {"@type": "EducationalOccupationalCredential", "name": "AWS Certified Solutions Architect – Associate", "credentialCategory": "Certification", "recognizedBy": {"@type": "Organization", "name": "Amazon Web Services"}, "url": "https://www.credly.com/badges/94de96ab-9429-4aa2-ad2f-daf6d67ccd73"},
+            {"@type": "EducationalOccupationalCredential", "name": "AWS Certified Security – Specialty", "credentialCategory": "Certification", "recognizedBy": {"@type": "Organization", "name": "Amazon Web Services"}, "url": "https://www.credly.com/badges/ba353a86-6c76-4aff-b564-addd462716a5"},
+            {"@type": "EducationalOccupationalCredential", "name": "Red Hat Certified Developer in Cloud-native Applications", "credentialCategory": "Certification", "recognizedBy": {"@type": "Organization", "name": "Red Hat"}, "url": "https://www.credly.com/badges/ec6f4dbe-42b4-40b8-887a-5990af366826"}
+          ]
+        }
       }
     </script>
   </head>
@@ -136,12 +160,13 @@
 
     <header class="site-header" data-header>
       <div class="container header-inner">
-        <a class="brand" href="#top" aria-label="Michael Klug, back to top">
+        <a class="brand" href="#top">
           <span class="brand-mark" aria-hidden="true">mk<i></i></span>
           <span class="brand-text">
             <strong>Michael Klug</strong>
             <small>Platform Architect</small>
           </span>
+          <span class="sr-only">, back to top</span>
         </a>
 
         <nav class="site-nav" id="site-nav" aria-label="Main" data-nav>
@@ -155,6 +180,10 @@
         </nav>
 
         <div class="header-actions">
+          <nav class="lang-switch" aria-label="Language" data-lang-switch>
+            <span aria-current="true"><span aria-hidden="true">EN</span><span class="sr-only">English</span></span>
+            <a href="de/" hreflang="de" lang="de"><span aria-hidden="true">DE</span><span class="sr-only">Deutsch</span></a>
+          </nav>
           <button class="icon-button theme-toggle" type="button" data-theme-toggle aria-label="Switch color theme">
             <svg class="icon-sun" viewBox="0 0 20 20" aria-hidden="true">
               <circle cx="10" cy="10" r="3.4" />
@@ -186,7 +215,7 @@
           <div class="hero-copy">
             <p class="hero-kicker reveal">
               <span class="status-dot" aria-hidden="true"></span>
-              Senior Platform Architect · Kubestronaut · Villach, AT
+              <span>Senior Platform Architect · Kubestronaut<span class="kicker-loc"> · Villach, AT</span></span>
             </p>
             <h1 id="hero-title" class="hero-title reveal" style="--d: 1">
               <span>The secure path,</span>
@@ -267,8 +296,8 @@
       </section>
 
       <!-- Stack marquee -->
-      <div class="marquee" aria-label="Technologies I work with">
-        <ul class="marquee-track">
+      <div class="marquee">
+        <ul class="marquee-track" aria-label="Technologies I work with">
           <li>Kubernetes</li>
           <li>Rancher</li>
           <li>OpenShift</li>
@@ -280,6 +309,10 @@
           <li>Prometheus</li>
           <li>Tekton</li>
           <li>Argo Workflows</li>
+          <li>Backstage</li>
+          <li>Coder</li>
+          <li>Tilt</li>
+          <li>Nix</li>
           <li>AWS</li>
         </ul>
         <ul class="marquee-track" aria-hidden="true">
@@ -294,6 +327,10 @@
           <li>Prometheus</li>
           <li>Tekton</li>
           <li>Argo Workflows</li>
+          <li>Backstage</li>
+          <li>Coder</li>
+          <li>Tilt</li>
+          <li>Nix</li>
           <li>AWS</li>
         </ul>
       </div>
@@ -314,7 +351,7 @@
             <article class="card card-feature reveal" data-spotlight>
               <div class="card-top">
                 <span class="card-index">01</span>
-                <span class="card-chip">2026 talk topic</span>
+                <span class="card-chip">4 talks in 2026</span>
               </div>
               <div class="feature-body">
                 <div>
@@ -328,6 +365,7 @@
                     <li>Inner loop</li>
                     <li>Dev environments</li>
                     <li>Golden paths</li>
+                    <li>Backstage</li>
                   </ul>
                 </div>
                 <svg class="loop-diagram" viewBox="0 0 220 220" role="img" aria-labelledby="loop-title">
@@ -559,8 +597,8 @@
                 <span class="ref ref-tag">tag: education</span>
                 <time>2020</time>
               </div>
-              <h3>BASc Software Engineering, with distinction</h3>
-              <p class="commit-org">FH Joanneum · Graz</p>
+              <h3>BSc Software Engineering (part-time), with distinction</h3>
+              <p class="commit-org">FH Joanneum · Kapfenberg</p>
               <p>
                 Graduated with a grade average of 1.32. Thesis work on managed CI/CD platforms and
                 Kubernetes operators for complex microservices.
@@ -610,6 +648,9 @@
                 A CNCF community group for everyone into Kubernetes, platform engineering, DevOps,
                 observability, security and open source in southern Austria — beginners welcome.
               </p>
+              <p>
+                Before that, I co-hosted the CNCF Meetup Graz in 2023 and 2024.
+              </p>
               <a
                 class="text-link"
                 href="https://community.cncf.io/cloud-native-carinthia/"
@@ -625,65 +666,79 @@
           <div class="talks reveal">
             <h3 class="talks-title">Selected talks</h3>
             <ul class="talk-list">
-              <li>
-                <a
-                  class="talk"
-                  href="https://www.meetup.com/de-de/lakeside-talks/"
-                  target="_blank"
-                  rel="noreferrer"
-                >
-                  <span class="talk-when"><time>2026</time> Lakeside Talks</span>
-                  <span class="talk-what">
-                    <strong>Rebuilding sucks: Kubernetes inner loops for winners</strong>
-                    <small>Fast feedback, debugging, live updates and local-versus-remote development — live.</small>
-                  </span>
-                  <span class="talk-go">Event <svg class="icon" aria-hidden="true"><use href="#i-external" /></svg></span>
-                </a>
+              <li class="talk">
+                <p class="talk-when"><time datetime="2026-06-11">Jun 2026</time> <span>Lakeside Talks #18</span> <span class="talk-where">Klagenfurt</span></p>
+                <div class="talk-what">
+                  <h4>
+                    <a class="talk-link" href="https://www.meetup.com/de-DE/lakeside-talks/events/315009679/" target="_blank" rel="noreferrer">Rebuilding sucks, k8s inner dev loop for winners</a>
+                  </h4>
+                  <p>
+                    Rebuilds, image pushes, Helm upgrades, waiting for pods — and what a fast Kubernetes
+                    inner loop looks like instead: live update vs. sync, local vs. remote, shared cluster
+                    vs. laptop, with a live demo. First given at APEC 2026 in Vienna.
+                  </p>
+                </div>
+                <p class="talk-go">
+                  <span class="talk-go-primary" aria-hidden="true">Event <svg class="icon"><use href="#i-external" /></svg></span>
+                  <a href="https://github.com/sadoMasupilami/tilt-demo" target="_blank" rel="noreferrer">Demo <svg class="icon" aria-hidden="true"><use href="#i-external" /></svg></a>
+                </p>
               </li>
-              <li>
-                <a
-                  class="talk"
-                  href="https://www.linkedin.com/in/michi-klug/recent-activity/all/"
-                  target="_blank"
-                  rel="noreferrer"
-                >
-                  <span class="talk-when"><time>2026</time> APEC Vienna</span>
-                  <span class="talk-what">
-                    <strong>No Setup. No Friction. Just Code.</strong>
-                    <small>Developer environments without setup pain — one of two sessions at the Austrian Platform Engineering Community Day.</small>
-                  </span>
-                  <span class="talk-go">Activity <svg class="icon" aria-hidden="true"><use href="#i-external" /></svg></span>
-                </a>
+              <li class="talk">
+                <p class="talk-when"><time datetime="2026-05-07">May 2026</time> <span>APEC 2026</span> <span class="talk-where">Vienna</span></p>
+                <div class="talk-what">
+                  <h4>
+                    <a class="talk-link" href="https://austrian-plattform-engineering-community.sessionize.com/schedule/day/20260507" target="_blank" rel="noreferrer">No Setup. No Friction. Just Code.</a>
+                  </h4>
+                  <p>
+                    Secure-by-default, standardized projects and workspaces with almost zero effort —
+                    with Coder and Backstage, offered by the platform team as a service.
+                  </p>
+                  <p class="talk-with">with Konrad Renner</p>
+                </div>
+                <p class="talk-go">
+                  <span class="talk-go-primary" aria-hidden="true">Schedule <svg class="icon"><use href="#i-external" /></svg></span>
+                </p>
               </li>
-              <li>
-                <a
-                  class="talk"
-                  href="https://github.com/DrackThor/cncf-chapter-graz/blob/main/2022-08-29/workflow-engines.pdf"
-                  target="_blank"
-                  rel="noreferrer"
-                >
-                  <span class="talk-when"><time>2022</time> CNCF Graz</span>
-                  <span class="talk-what">
-                    <strong>Kubernetes-native workflow engines</strong>
-                    <small>Tekton, Argo Workflows and Argo Events, with an end-to-end live demo.</small>
-                  </span>
-                  <span class="talk-go">Slides <svg class="icon" aria-hidden="true"><use href="#i-external" /></svg></span>
-                </a>
+              <li class="talk">
+                <p class="talk-when"><time datetime="2026-05-07">May 2026</time> <span>APEC 2026</span> <span class="talk-where">Vienna</span></p>
+                <div class="talk-what">
+                  <h4>
+                    <a class="talk-link" href="https://austrian-plattform-engineering-community.sessionize.com/schedule/day/20260507" target="_blank" rel="noreferrer">DevX as Code</a>
+                  </h4>
+                  <p>
+                    One configuration for the local shell, dev containers and cloud development
+                    environments with devenv (Nix) — onboarding in minutes instead of days.
+                  </p>
+                  <p class="talk-with">with Konrad Renner</p>
+                </div>
+                <p class="talk-go">
+                  <span class="talk-go-primary" aria-hidden="true">Schedule <svg class="icon"><use href="#i-external" /></svg></span>
+                </p>
               </li>
-              <li>
-                <a
-                  class="talk"
-                  href="https://github.com/DrackThor/cncf-chapter-graz/blob/main/2021-11/2021_11_gitops_argocd.pdf"
-                  target="_blank"
-                  rel="noreferrer"
-                >
-                  <span class="talk-when"><time>2021</time> CNCF Graz</span>
-                  <span class="talk-what">
-                    <strong lang="de">GitOps mit Argo CD</strong>
-                    <small>Declarative, Git-driven delivery to Kubernetes in practice (in German).</small>
-                  </span>
-                  <span class="talk-go">Slides <svg class="icon" aria-hidden="true"><use href="#i-external" /></svg></span>
-                </a>
+              <li class="talk">
+                <p class="talk-when"><time datetime="2022-08-29">Aug 2022</time> <span>CNCF Meetup #3</span> <span class="talk-where">Graz</span></p>
+                <div class="talk-what">
+                  <h4>
+                    <a class="talk-link" href="https://github.com/DrackThor/cncf-chapter-graz/blob/main/2022-08-29/workflow-engines.pdf" target="_blank" rel="noreferrer">Kubernetes-native workflow engines</a>
+                  </h4>
+                  <p>Tekton, Argo Workflows and Argo Events, with an end-to-end live demo.</p>
+                </div>
+                <p class="talk-go">
+                  <span class="talk-go-primary" aria-hidden="true">Slides <svg class="icon"><use href="#i-external" /></svg></span>
+                  <a href="https://community.cncf.io/events/details/cncf-graz-austria-presents-3-cncf-meetup-graz-august-29-2022/" target="_blank" rel="noreferrer">Event <svg class="icon" aria-hidden="true"><use href="#i-external" /></svg></a>
+                </p>
+              </li>
+              <li class="talk">
+                <p class="talk-when"><time datetime="2021-11-24">Nov 2021</time> <span>CNCF Meetup</span> <span class="talk-where">Graz</span></p>
+                <div class="talk-what">
+                  <h4 lang="de">
+                    <a class="talk-link" href="https://github.com/DrackThor/cncf-chapter-graz/blob/main/2021-11/2021_11_gitops_argocd.pdf" target="_blank" rel="noreferrer">GitOps mit Argo CD</a>
+                  </h4>
+                  <p>Declarative, Git-driven delivery to Kubernetes in practice (in German).</p>
+                </div>
+                <p class="talk-go">
+                  <span class="talk-go-primary" aria-hidden="true">Slides <svg class="icon"><use href="#i-external" /></svg></span>
+                </p>
               </li>
             </ul>
           </div>
@@ -703,27 +758,27 @@
           </header>
 
           <div class="creds">
-            <a
-              class="kubestronaut reveal"
-              href="https://www.credly.com/badges/746972d2-5711-49da-adb9-190c93b9d49b/linked_in_profile"
-              target="_blank"
-              rel="noreferrer"
-              data-spotlight
-            >
+            <article class="kubestronaut reveal" data-spotlight>
               <svg class="kubestronaut-helm" aria-hidden="true"><use href="#i-helm" /></svg>
-              <span class="kubestronaut-label">Linux Foundation · CNCF</span>
-              <strong>Kubestronaut</strong>
-              <span class="kubestronaut-text">
+              <p class="kubestronaut-label">Linux Foundation · CNCF</p>
+              <h3 class="kubestronaut-title">Kubestronaut</h3>
+              <p class="kubestronaut-text">
                 All five CNCF Kubernetes certifications: KCNA, KCSA, CKA, CKAD and CKS.
-              </span>
-              <span class="kubestronaut-row" aria-hidden="true">
+              </p>
+              <p class="kubestronaut-row" aria-hidden="true">
                 <span>KCNA</span><span>KCSA</span><span>CKA</span><span>CKAD</span><span>CKS</span>
-              </span>
-              <span class="text-link">
-                Verify on Credly
-                <svg class="icon" aria-hidden="true"><use href="#i-external" /></svg>
-              </span>
-            </a>
+              </p>
+              <p class="kubestronaut-links">
+                <a class="text-link" href="https://www.credly.com/badges/746972d2-5711-49da-adb9-190c93b9d49b/linked_in_profile" target="_blank" rel="noreferrer">
+                  Verify on Credly
+                  <svg class="icon" aria-hidden="true"><use href="#i-external" /></svg>
+                </a>
+                <a class="text-link" href="https://www.cncf.io/training/kubestronaut/?_sf_s=klug" target="_blank" rel="noreferrer">
+                  CNCF directory
+                  <svg class="icon" aria-hidden="true"><use href="#i-external" /></svg>
+                </a>
+              </p>
+            </article>
 
             <ul class="cert-grid">
               <li class="reveal">
@@ -763,17 +818,17 @@
               </li>
               <li class="reveal">
                 <a href="https://www.credly.com/badges/94de96ab-9429-4aa2-ad2f-daf6d67ccd73/linked_in_profile" target="_blank" rel="noreferrer">
-                  <code>AWS SA</code><span>AWS Certified Solutions Architect</span><small>Amazon Web Services</small>
+                  <code>AWS SAA</code><span>AWS Certified Solutions Architect – Associate</span><small>Amazon Web Services</small>
                 </a>
               </li>
               <li class="reveal">
                 <a href="https://www.credly.com/badges/ba353a86-6c76-4aff-b564-addd462716a5/linked_in_profile" target="_blank" rel="noreferrer">
-                  <code>AWS SCS</code><span>AWS Certified Security — Specialty</span><small>Amazon Web Services</small>
+                  <code>AWS SCS</code><span>AWS Certified Security – Specialty</span><small>Amazon Web Services</small>
                 </a>
               </li>
               <li class="reveal">
                 <a href="https://www.credly.com/badges/ec6f4dbe-42b4-40b8-887a-5990af366826/linked_in_profile" target="_blank" rel="noreferrer">
-                  <code>RH</code><span>Red Hat Containers</span><small>Red Hat</small>
+                  <code>RH</code><span>Red Hat Certified Developer in Cloud-native Applications</span><small>Red Hat</small>
                 </a>
               </li>
             </ul>
@@ -917,6 +972,7 @@
           <a href="https://www.linkedin.com/in/michi-klug/" target="_blank" rel="noreferrer">LinkedIn</a>
           <a href="https://github.com/sadoMasupilami" target="_blank" rel="noreferrer">GitHub</a>
           <a href="impressum.html" lang="de">Impressum</a>
+          <a href="de/" hreflang="de" lang="de">Deutsch</a>
           <a href="#top">Back to top ↑</a>
         </nav>
         <p class="footer-note">

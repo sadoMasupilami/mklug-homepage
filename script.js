@@ -2,6 +2,10 @@ window.__mkReady = true;
 
 const root = document.documentElement;
 const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
+const isGerman = root.lang === "de";
+
+/* Pick the English or German variant of a user-facing string. */
+const t = (en, de) => (isGerman ? de : en);
 
 /* ----- Small helpers ------------------------------------------------------ */
 
@@ -39,10 +43,10 @@ const currentTheme = () => root.dataset.theme || (prefersLight.matches ? "light"
 const syncThemeUi = () => {
   const theme = currentTheme();
   const next = theme === "dark" ? "light" : "dark";
-  const label =
-    root.lang === "de"
-      ? `Zum ${next === "light" ? "hellen" : "dunklen"} Farbschema wechseln`
-      : `Switch to ${next} theme`;
+  const label = t(
+    `Switch to ${next} theme`,
+    `Zum ${next === "light" ? "hellen" : "dunklen"} Farbschema wechseln`,
+  );
   themeToggle?.setAttribute("aria-label", label);
   if (root.dataset.theme) {
     document.querySelectorAll('meta[name="theme-color"]').forEach((meta) => {
@@ -82,7 +86,8 @@ const setMenu = (open) => {
   nav.classList.toggle("is-open", open);
   menuToggle.setAttribute("aria-expanded", String(open));
   const label = menuToggle.querySelector(".sr-only");
-  if (label) label.textContent = open ? "Close menu" : "Open menu";
+  if (label)
+    label.textContent = open ? t("Close menu", "Menü schließen") : t("Open menu", "Menü öffnen");
   document.body.classList.toggle("menu-open", open);
 };
 
@@ -194,9 +199,9 @@ document.querySelectorAll("[data-copy]").forEach((button) => {
     try {
       await copyText(button.dataset.copy);
       button.classList.add("is-copied");
-      if (label) label.textContent = "Copied";
+      if (label) label.textContent = t("Copied", "Kopiert");
     } catch (error) {
-      if (label) label.textContent = "Press Ctrl+C";
+      if (label) label.textContent = t("Press Ctrl+C", "Strg+C drücken");
     }
     window.clearTimeout(timer);
     timer = window.setTimeout(() => {
@@ -272,44 +277,83 @@ if (terminal) {
     ["CAPA", "Certified Argo Project Associate", "Linux Foundation"],
     ["ICA", "Istio Certified Associate", "Linux Foundation"],
     ["PCA", "Prometheus Certified Associate", "Linux Foundation"],
-    ["AWS-SA", "AWS Certified Solutions Architect", "AWS"],
+    ["AWS-SAA", "AWS Certified Solutions Architect - Associate", "AWS"],
     ["AWS-SCS", "AWS Certified Security - Specialty", "AWS"],
-    ["RH", "Red Hat Containers", "Red Hat"],
+    ["RH", "Red Hat Certified Developer in Cloud-native Applications", "Red Hat"],
+  ];
+
+  const talks = [
+    [
+      "2026-06",
+      "https://www.meetup.com/de-DE/lakeside-talks/events/315009679/",
+      "Rebuilding sucks, k8s inner dev loop for winners",
+      "Lakeside Talks #18, Klagenfurt",
+    ],
+    [
+      "2026-05",
+      "https://austrian-plattform-engineering-community.sessionize.com/schedule/day/20260507",
+      "No Setup. No Friction. Just Code.",
+      t("APEC 2026, Vienna", "APEC 2026, Wien"),
+    ],
+    [
+      "2026-05",
+      "https://austrian-plattform-engineering-community.sessionize.com/schedule/day/20260507",
+      "DevX as Code",
+      t("APEC 2026, Vienna", "APEC 2026, Wien"),
+    ],
+    [
+      "2022-08",
+      "https://github.com/DrackThor/cncf-chapter-graz/blob/main/2022-08-29/workflow-engines.pdf",
+      "Kubernetes-native workflow engines",
+      "CNCF Meetup Graz",
+    ],
+    [
+      "2021-11",
+      "https://github.com/DrackThor/cncf-chapter-graz/blob/main/2021-11/2021_11_gitops_argocd.pdf",
+      "GitOps mit Argo CD",
+      "CNCF Meetup Graz",
+    ],
   ];
 
   const output = {
     help() {
       line(
         [
-          "<b>Available commands</b>",
-          "  whoami         who is this?",
-          "  focus          what I work on",
+          `<b>${t("Available commands", "Verfügbare Befehle")}</b>`,
+          `  whoami         ${t("who is this?", "wer ist das?")}`,
+          `  focus          ${t("what I work on", "woran ich arbeite")}`,
           "  career         git log --oneline career",
-          "  talks          selected talks and slides",
+          `  talks          ${t("talks and slides", "Talks und Slides")}`,
           "  certs          kubectl get certifications",
-          "  contact        how to reach me",
+          `  contact        ${t("how to reach me", "so erreichst du mich")}`,
           "  open &lt;name&gt;    linkedin | github | email | community",
-          "  theme          toggle light / dark",
+          `  theme          ${t("toggle light / dark", "hell / dunkel umschalten")}`,
+          `  lang           ${t("Deutsche Version", "English version")}`,
           "  ls, cat, kubectl, history, clear",
-          '<span class="t-dim">Tip: Tab completes, ↑ / ↓ walk the history.</span>',
+          `<span class="t-dim">${t("Tip: Tab completes, ↑ / ↓ walk the history.", "Tipp: Tab vervollständigt, ↑ / ↓ blättern im Verlauf.")}</span>`,
         ].join("\n"),
       );
     },
     whoami() {
       line(
-        "<b>Michael Klug</b> — Senior Platform Architect at FullStackS, Kubestronaut,\n" +
-          "guest lecturer at FH Joanneum and organizer of Cloud Native Carinthia.\n" +
-          `Based in Villach, Austria. ${yearsSince(2014)} years in infrastructure, Kubernetes since 2018.`,
+        t(
+          "<b>Michael Klug</b> — Senior Platform Architect at FullStackS, Kubestronaut,\n" +
+            "guest lecturer at FH Joanneum and organizer of Cloud Native Carinthia.\n" +
+            `Based in Villach, Austria. ${yearsSince(2014)} years in infrastructure, Kubernetes since 2018.`,
+          "<b>Michael Klug</b> — Senior Platform Architect bei FullStackS, Kubestronaut,\n" +
+            "Gastlektor an der FH Joanneum und Organisator von Cloud Native Carinthia.\n" +
+            `Aus Villach, Österreich. ${yearsSince(2014)} Jahre Infrastruktur, Kubernetes seit 2018.`,
+        ),
       );
     },
     focus() {
       line(
         [
-          "<b>01</b>  developer experience     inner loops, dev environments, golden paths",
-          "<b>02</b>  rancher &amp; openshift     platform foundations, multi-cluster patterns",
-          "<b>03</b>  gitops &amp; delivery       argo cd, terraform, gitlab ci",
-          "<b>04</b>  platform security        hardening, policy, cloud security",
-          "<b>05</b>  observability &amp; mesh    opentelemetry, istio, prometheus",
+          `<b>01</b>  developer experience     ${t("inner loops, dev environments, golden paths", "Inner Loops, Dev-Umgebungen, Golden Paths")}`,
+          `<b>02</b>  rancher &amp; openshift      ${t("platform foundations, multi-cluster patterns", "Plattform-Fundamente, Multi-Cluster-Muster")}`,
+          "<b>03</b>  gitops &amp; delivery        argo cd, terraform, gitlab ci",
+          `<b>04</b>  platform security        ${t("hardening, policy, cloud security", "Hardening, Policies, Cloud-Security")}`,
+          "<b>05</b>  observability &amp; mesh     opentelemetry, istio, prometheus",
         ].join("\n"),
       );
     },
@@ -320,19 +364,19 @@ if (terminal) {
           '<span class="y-s">fa57e2a</span> 2023  Senior DevOps Engineer @ FullStackS',
           '<span class="y-s">e1b6c03</span> 2022  CSM &amp; Technical Lead @ IBM',
           '<span class="y-s">5ca1ab1</span> 2020  Cloud Engineer → Senior Cloud Engineer @ Beyond by BearingPoint',
-          '<span class="y-s">b45c132</span> <span class="t-ok">(tag: education)</span> 2020  BASc Software Engineering @ FH Joanneum',
+          '<span class="y-s">b45c132</span> <span class="t-ok">(tag: education)</span> 2020  BSc Software Engineering @ FH Joanneum',
           '<span class="y-s">ba52014</span> 2014  IT Professional → Development IT-Services @ KNAPP AG',
         ].join("\n"),
       );
     },
     talks() {
       line(
-        [
-          `2026  ${ext("https://www.meetup.com/de-de/lakeside-talks/", "Rebuilding sucks: Kubernetes inner loops for winners")}  · Lakeside Talks`,
-          `2026  ${ext("https://www.linkedin.com/in/michi-klug/recent-activity/all/", "No Setup. No Friction. Just Code.")}  · APEC Vienna`,
-          `2022  ${ext("https://github.com/DrackThor/cncf-chapter-graz/blob/main/2022-08-29/workflow-engines.pdf", "Kubernetes-native workflow engines")}  · CNCF Graz`,
-          `2021  ${ext("https://github.com/DrackThor/cncf-chapter-graz/blob/main/2021-11/2021_11_gitops_argocd.pdf", "GitOps mit Argo CD")}  · CNCF Graz`,
-        ].join("\n"),
+        talks
+          .map(
+            ([when, href, title, event]) =>
+              `${when}  ${ext(href, title)}  <span class="t-dim">· ${event}</span>`,
+          )
+          .join("\n"),
       );
     },
     certs() {
@@ -389,10 +433,18 @@ if (terminal) {
           "Focus:        developer-experience, platform-security, gitops, observability",
           'Status:       <span class="t-ok">Shipping</span>',
           "Events:",
-          "  Normal  Teaching   FH Joanneum, every year since 2021",
-          "  Normal  Speaking   Lakeside Talks, APEC Vienna, CNCF Graz",
-          "  Normal  Hosting    Cloud Native Carinthia meetups",
+          `  Normal  Teaching   ${t("FH Joanneum, every year since 2021", "FH Joanneum, jedes Jahr seit 2021")}`,
+          `  Normal  Speaking   ${t("APEC Vienna, Lakeside Talks Klagenfurt, CNCF Graz", "APEC Wien, Lakeside Talks Klagenfurt, CNCF Graz")}`,
+          `  Normal  Hosting    ${t("Cloud Native Carinthia meetups", "Cloud Native Carinthia Meetups")}`,
         ].join("\n"),
+      );
+    },
+    greet() {
+      text(
+        t(
+          "Hi there! Type contact to reach the human behind this terminal.",
+          "Servus! Mit contact erreichst du den Menschen hinter diesem Terminal.",
+        ),
       );
     },
   };
@@ -402,7 +454,10 @@ if (terminal) {
       line(terminal.querySelector(".t-yaml code")?.innerHTML ?? "", "t-out"),
     "README.md": () =>
       line(
-        "# michael-klug\nPlatform engineering for people who ship.\nRun <b>help</b> to explore, or <b>contact</b> to say hi.",
+        t(
+          "# michael-klug\nPlatform engineering for people who ship.\nRun <b>help</b> to explore, or <b>contact</b> to say hi.",
+          "# michael-klug\nPlatform Engineering für Teams, die liefern.\nMit <b>help</b> umsehen oder mit <b>contact</b> Hallo sagen.",
+        ),
       ),
     "talks.txt": output.talks,
     "certs.txt": output.certs,
@@ -424,7 +479,10 @@ if (terminal) {
 
     if (!verb || verb === "help") {
       line(
-        "kubectl controls the Michael Klug cluster.\n  get pods | get certs | describe michael | logs talks | apply -f michael-klug.yaml",
+        t(
+          "kubectl controls the Michael Klug cluster.",
+          "kubectl steuert den Michael-Klug-Cluster.",
+        ) + "\n  get pods | get certs | describe michael | logs talks | apply -f michael-klug.yaml",
       );
       return;
     }
@@ -443,7 +501,7 @@ if (terminal) {
               ["NAME", "STATUS"],
               ["villach-at", "Active"],
               ["vienna-remote", "Active"],
-              ["graz-fh-joanneum", "Active"],
+              ["fh-joanneum", "Active"],
             ],
             [20, 8],
           ),
@@ -454,7 +512,9 @@ if (terminal) {
         `error: the server doesn't have a resource type "${resource || "<none>"}"`,
         "t-out t-err",
       );
-      line('<span class="t-dim">Try: kubectl get pods | certs | talks | namespaces</span>');
+      line(
+        `<span class="t-dim">${t("Try", "Probier")}: kubectl get pods | certs | talks | namespaces</span>`,
+      );
       return;
     }
     if (verb === "describe") {
@@ -473,12 +533,18 @@ if (terminal) {
       return;
     }
     if (verb === "delete") {
-      text("Error from server (Forbidden): enthusiasm cannot be deleted.", "t-out t-err");
+      text(
+        t(
+          "Error from server (Forbidden): enthusiasm cannot be deleted.",
+          "Error from server (Forbidden): Begeisterung lässt sich nicht löschen.",
+        ),
+        "t-out t-err",
+      );
       return;
     }
     if (verb === "exec" || verb === "port-forward") {
       line(
-        `Forwarding to a human… ${ext("https://www.linkedin.com/in/michi-klug/", "linkedin.com/in/michi-klug")} or <a href="mailto:michiklug85@gmail.com">email</a>.`,
+        `${t("Forwarding to a human…", "Weiterleitung an einen Menschen…")} ${ext("https://www.linkedin.com/in/michi-klug/", "linkedin.com/in/michi-klug")} ${t("or", "oder")} <a href="mailto:michiklug85@gmail.com">${t("email", "E-Mail")}</a>.`,
       );
       return;
     }
@@ -497,6 +563,16 @@ if (terminal) {
     certs: output.certs,
     contact: output.contact,
     social: output.contact,
+    lang: (args) => {
+      const link = document.querySelector("[data-lang-switch] a[hreflang]");
+      const wanted = (args[0] || "").toLowerCase();
+      if (!link || (wanted && wanted !== link.hreflang)) {
+        text(t("already speaking English", "spricht bereits Deutsch"), "t-out t-dim");
+        return;
+      }
+      text(t("switching to Deutsch…", "wechsle zu English…"), "t-out t-ok");
+      window.location.href = link.href;
+    },
     pwd: () => text("/home/michael"),
     date: () => text(new Date().toString()),
     ls: () => line(Object.keys(files).join("   ")),
@@ -504,25 +580,36 @@ if (terminal) {
     history: () =>
       text(
         history.map((entry, i) => `${String(i + 1).padStart(4, " ")}  ${entry}`).join("\n") ||
-          "(empty)",
+          t("(empty)", "(leer)"),
       ),
     echo: (args) => text(args.join(" ")),
     cat: (args) => {
       const file = args[0];
-      if (!file) return text("usage: cat <file>  —  try: ls", "t-out t-dim");
+      if (!file)
+        return text(
+          t("usage: cat <file>  —  try: ls", "Verwendung: cat <datei>  —  Tipp: ls"),
+          "t-out t-dim",
+        );
       if (files[file]) return files[file]();
       text(`cat: ${file}: No such file or directory`, "t-out t-err");
     },
     open: (args) => {
       const key = (args[0] || "").toLowerCase();
       const href = links[key];
-      if (!href) return text("usage: open linkedin | github | email | community", "t-out t-dim");
+      if (!href)
+        return text(
+          t(
+            "usage: open linkedin | github | email | community",
+            "Verwendung: open linkedin | github | email | community",
+          ),
+          "t-out t-dim",
+        );
       if (href.startsWith("mailto:")) {
         window.location.href = href;
       } else {
         window.open(href, "_blank", "noopener,noreferrer");
       }
-      text(`opening ${key}…`, "t-out t-ok");
+      text(t(`opening ${key}…`, `öffne ${key}…`), "t-out t-ok");
     },
     theme: (args) => {
       const wanted = args[0];
@@ -533,18 +620,41 @@ if (terminal) {
             ? "light"
             : "dark";
       setTheme(next);
-      text(`theme set to ${next}`, "t-out t-ok");
+      text(
+        t(`theme set to ${next}`, `Farbschema: ${next === "light" ? "hell" : "dunkel"}`),
+        "t-out t-ok",
+      );
     },
     kubectl,
     k: kubectl,
     sudo: () =>
       text("michael is not in the sudoers file. This incident will be reported. ;)", "t-out t-err"),
     rm: () =>
-      text("Nice try. This cluster runs with Pod Security Admission enforced.", "t-out t-err"),
-    exit: () => line('There is no exit — only <a href="#contact">#contact</a>.'),
-    vim: () => text("You are now trapped in vim. Just kidding — try :q elsewhere."),
-    hello: () => text("Hi there! Type contact to reach the human behind this terminal."),
-    hi: () => text("Hi there! Type contact to reach the human behind this terminal."),
+      text(
+        t(
+          "Nice try. This cluster runs with Pod Security Admission enforced.",
+          "Netter Versuch. Dieser Cluster läuft mit erzwungener Pod Security Admission.",
+        ),
+        "t-out t-err",
+      ),
+    exit: () =>
+      line(
+        t(
+          'There is no exit — only <a href="#contact">#contact</a>.',
+          'Es gibt kein exit – nur <a href="#contact">#contact</a>.',
+        ),
+      ),
+    vim: () =>
+      text(
+        t(
+          "You are now trapped in vim. Just kidding — try :q elsewhere.",
+          "Du steckst jetzt in vim fest. Kleiner Scherz – :q bitte woanders.",
+        ),
+      ),
+    hello: output.greet,
+    hi: output.greet,
+    hallo: output.greet,
+    servus: output.greet,
   };
 
   const run = (raw) => {
@@ -562,7 +672,9 @@ if (terminal) {
       command(args);
     } else {
       text(`command not found: ${name}`, "t-out t-err");
-      line('<span class="t-dim">Type help to see what this terminal can do.</span>');
+      line(
+        `<span class="t-dim">${t("Type help to see what this terminal can do.", "help zeigt, was dieses Terminal kann.")}</span>`,
+      );
     }
   };
 

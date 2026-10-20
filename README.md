@@ -5,6 +5,7 @@ FullStackS, Kubestronaut, guest lecturer at FH Joanneum and organizer of Cloud N
 
 The design is a "control plane" theme: dark by default with a light theme toggle, a git-log
 career timeline, a CI-pipeline approach section and an interactive terminal (type `help`).
+The site is bilingual: English at `/` and German at `/de/`, linked with `hreflang`.
 
 ## Preview locally
 
@@ -14,18 +15,28 @@ From this directory, run:
 python3 -m http.server 4173
 ```
 
-Then open `http://localhost:4173`.
+Then open `http://localhost:4173` (English) or `http://localhost:4173/de/` (German).
 
 ## Project structure
 
-- `index.html` — page content, metadata and structured data
-- `impressum.html` — legal disclosure for the personal employee portfolio (German)
+- `index.html` — English page content, metadata and structured data
+- `de/index.html` — German version with the same markup, section IDs and structured data
+- `impressum.html` — legal disclosure and privacy note for the personal employee portfolio (German)
 - `404.html` — GitHub Pages "not found" page
 - `styles.css` — design tokens (dark and light), layout, components and motion
-- `script.js` — theme toggle, navigation, scroll reveal, copy button and the terminal
-- `assets/` — portrait (JPG and WebP), favicon, touch icon and social sharing card
+- `script.js` — theme toggle, navigation, scroll reveal, copy button and the terminal; strings
+  switch between English and German based on `<html lang>`
+- `assets/` — portrait (JPG and WebP), favicon, touch icon and social sharing cards (English and
+  German)
 - `assets/fonts/` — self-hosted Bricolage Grotesque, Geist and Geist Mono (SIL OFL 1.1)
 - `robots.txt` and `sitemap.xml` — crawler and indexing metadata
+
+## Editing content
+
+Both language versions are plain HTML. When you change content, update `index.html` and
+`de/index.html` together, and keep the talk list in `script.js` (the terminal's `talks` command) in
+step with the Talks section. Bump `dateModified` in the structured data and `lastmod` in
+`sitemap.xml` when the content changes.
 
 ## Privacy
 
